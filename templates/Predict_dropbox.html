@@ -1,0 +1,35 @@
+
+<html>
+<head>
+	<style>
+		div.login {border-style: groove; width: 600; margin-left:550px}
+		h4{font-size: 25px }
+	</style>
+</head>
+<body>
+		<h1 style=" font-size: 60px; margin-top:20px" align="center">Drop Dataset</h1>
+
+	 <div class="login"  align="center" style="margin-top: 200px; border:solid black 1px " >
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict_dropbox')}}"method="post">
+    	<h4>Enter your Name:</h4>
+    	<br>
+    	<input type="text" name="Name" placeholder="Name" required="required" />
+		<h4>Enter your Batch No:</h4> 
+		<br>
+		<input type="text" name="Batch" placeholder="batch no" required="required" />
+		<br>
+		<br>
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Submit</button>
+    </form>
+    <br>
+    <br>
+    <div style="border: solid black 1px; font-size:22px">
+   {{ prediction_text }}
+   </div>
+ </div>
+
+</body>
+</html>
